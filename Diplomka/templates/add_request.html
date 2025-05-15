@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Создание служебной заявки</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='add_request.css') }}">
+</head>
+<body>
+  <h2>Создание служебной заявки</h2>
+  <p class="form-description">
+    Заполните форму для подачи заявки. В зависимости от выбранного типа появятся дополнительные поля для уточнения.
+  </p>
+
+  <form id="request-form" method="POST">
+    <label for="request_type">Тип заявки</label>
+    <select id="request_type" name="request_type" required>
+      <option value="" disabled selected>Выберите тип заявки</option>
+      <option value="Запрос на документы">Запрос на документы</option>
+      <option value="Запрос на материалы">Запрос на материалы</option>
+      <option value="Запрос на рабочее оборудование">Запрос на рабочее оборудование</option>
+      <option value="Заявка на отпуск">Заявка на отпуск</option>
+      <option value="Заявка на смену рабочего времени">Заявка на смену рабочего времени</option>
+      <option value="Запрос на рабочие инструменты">Запрос на рабочие инструменты</option>
+      <option value="Заявка на обучение">Заявка на обучение</option>
+      <option value="Заявка на ремонт или обслуживание оборудования">Заявка на ремонт или обслуживание оборудования</option>
+      <option value="Другое">Другое</option>
+    </select>
+
+    <div id="title-section" style="display: none;">
+      <label for="title">Краткий заголовок</label>
+      <input type="text" id="title" name="title" required>
+    </div>
+
+    <div id="description-section" style="display: none;">
+      <label for="description">Подробное описание</label>
+      <textarea id="description" name="description" required></textarea>
+    </div>
+
+    <div id="additional-fields"></div>
+
+    {% if current_user.is_admin %}
+      <label for="status">Статус заявки</label>
+      <select id="status" name="status" required>
+        <option value="Новая">Новая</option>
+        <option value="В обработке">В обработке</option>
+        <option value="Одобрена">Одобрена</option>
+        <option value="Отклонена">Отклонена</option>
+      </select>
+    {% else %}
+      <input type="hidden" name="status" value="Новая">
+    {% endif %}
+
+    <button type="submit">Отправить заявку</button>
+    <div style="margin-top: 1rem;">
+      <a href="{{ url_for('view_requests') }}" class="back-button">← Назад</a>
+    </div>
+  </form>
+
+  <script>
+    const requestType = document.getElementById('request_type');
+    const titleSection = document.getElementById('title-section');
+    const descriptionSection = document.getElementById('description-section');
+    const additionalFields = document.getElementById('additional-fields');
+    const form = document.getElementById('request-form');
+
+    requestType.addEventListener('change', function () {
+      const type = this.value;
+      additionalFields.innerHTML = '';
+      titleSection.style.display = 'none';
+      descriptionSection.style.display = 'none';
+      document.getElementById('title').required = false;
+      document.getElementById('description').required = false;
+      document.getElementById('title').value = ''; // Reset title field
+      document.getElementById('description').value = ''; // Reset description field
+
+      if (type === 'Запрос на документы') {
+        additionalFields.innerHTML = ` 
+          <label for="documents">Какие документы необходимы?</label>
+          <textarea id="documents" name="documents" required></textarea>
+        `;
+      } else if (type === 'Запрос на материалы') {
+        additionalFields.innerHTML = ` 
+          <label for="material_details">Необходимые материалы и количество</label>
+          <textarea id="material_details" name="material_details" required></textarea>
+        `;
+      } else if (type === 'Запрос на рабочее оборудование') {
+        additionalFields.innerHTML = ` 
+          <label for="equipment_details">Укажите необходимое оборудование</label>
+          <textarea id="equipment_details" name="equipment_details" required></textarea>
+        `;
+      } else if (type === 'Заявка на отпуск') {
+        additionalFields.innerHTML = ` 
+          <label for="vacation_reason">Причина отпуска</label>
+          <input type="text" id="vacation_reason" name="vacation_reason" required>
+          <label for="vacation_dates">Желаемые даты отпуска</label>
+          <input type="text" id="vacation_dates" name="vacation_dates" required>
+        `;
+      } else if (type === 'Заявка на смену рабочего времени') {
+        additionalFields.innerHTML = ` 
+          <label for="new_working_hours">Новые рабочие часы</label>
+          <input type="text" id="new_working_hours" name="new_working_hours" required>
+        `;
+      } else if (type === 'Запрос на рабочие инструменты') {
+        additionalFields.innerHTML = ` 
+          <label for="tools_needed">Необходимые инструменты</label>
+          <textarea id="tools_needed" name="tools_needed" required></textarea>
+        `;
+      } else if (type === 'Заявка на обучение') {
+        additionalFields.innerHTML = ` 
+          <label for="training_details">Детали обучения</label>
+          <textarea id="training_details" name="training_details" required></textarea>
+        `;
+      } else if (type === 'Заявка на ремонт или обслуживание оборудования') {
+        additionalFields.innerHTML = ` 
+          <label for="equipment_issue">Описание проблемы</label>
+          <textarea id="equipment_issue" name="equipment_issue" required></textarea>
+        `;
+      } else if (type === 'Другое') {
+        titleSection.style.display = 'block';
+        descriptionSection.style.display = 'block';
+        document.getElementById('title').required = true;
+        document.getElementById('description').required = true;
+      }
+    });
+
+    form.addEventListener('submit', function(event) {
+      // Проверяем обязательность заголовка и описания только если выбрано "Другое"
+      const title = document.getElementById('title').value;
+      const description = document.getElementById('description').value;
+      const requestTypeValue = document.getElementById('request_type').value;
+
+      if (requestTypeValue === 'Другое' && (!title || !description)) {
+        event.preventDefault();  // Предотвращаем отправку формы
+        alert('Заголовок и описание обязательны для типа заявки "Другое".');
+      }
+    });
+  </script>
+</body>
+</html>

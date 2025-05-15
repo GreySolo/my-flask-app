@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактировать проект</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='edit_project.css') }}">
+</head>
+<body>
+    <h2>Редактирование проекта</h2>
+    <form action="{{ url_for('edit_project', id=project.id) }}" method="POST" enctype="multipart/form-data" onsubmit="selectAllAssignedUsers()">
+        <label for="title">Название проекта:</label>
+        <input type="text" name="title" value="{{ project.title }}" required><br>
+
+        <label for="description">Описание:</label>
+        <textarea name="description" required>{{ project.description }}</textarea><br>
+
+        <label for="status">Статус проекта:</label>
+        <select name="status" required>
+            <option value="active" {% if project.status == 'active' %}selected{% endif %}>Активный</option>
+            <option value="completed" {% if project.status == 'completed' %}selected{% endif %}>Завершённый</option>
+        </select><br>
+
+        <label>Текущее изображение:</label><br>
+        {% if project.image_url %}
+            <img src="{{ url_for('uploaded_file', filename=project.image_url) }}" alt="Проект" width="200"><br>
+        {% else %}
+            <p>Нет изображения</p>
+        {% endif %}
+
+        <label for="image">Новое изображение (если нужно заменить):</label>
+        <input type="file" name="image" accept="image/*"><br>
+
+        <div class="dual-select">
+            <div>
+                <label>Доступные сотрудники:</label><br>
+                <select id="availableUsers" multiple size="10" ondblclick="moveToSelected('availableUsers', 'assignedUsers')">
+                    {% for user in users %}
+                        {% if user.id not in assigned_user_ids %}
+                            <option value="{{ user.id }}">{{ user.full_name }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div>
+                <label>Назначенные сотрудники:</label><br>
+                <select id="assignedUsers" name="users" multiple size="10" ondblclick="moveToSelected('assignedUsers', 'availableUsers')">
+                    {% for user in users %}
+                        {% if user.id in assigned_user_ids %}
+                            <option value="{{ user.id }}" selected>{{ user.full_name }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+        <button type="submit">Сохранить изменения</button>
+    </form>
+
+    <a href="{{ url_for('admin') }}" class="back-button">Назад</a>
+
+    <script>
+        function moveToSelected(fromId, toId) {
+            const from = document.getElementById(fromId);
+            const to = document.getElementById(toId);
+            [...from.selectedOptions].forEach(option => {
+                option.selected = false; // сбрасываем выбранность, чтобы работал onsubmit
+                to.add(option);
+            });
+        }
+
+        function selectAllAssignedUsers() {
+            const assigned = document.getElementById('assignedUsers');
+            for (let option of assigned.options) {
+                option.selected = true;
+            }
+        }
+    </script>
+</body>
+</html>

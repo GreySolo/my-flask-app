@@ -1,0 +1,41 @@
+/* Основные настройки */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Навигационное меню */
+.main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+/* Контент страницы */
+.main-content {
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+/* Мобильные стили */
+@media (max-width: 768px) {
+    .company-name {
+        font-size: 2rem;
+    }
+
+    .activity-card {
+        margin-bottom: 20px;
+    }
+
+    .activity-details h3 {
+        font-size: 1.3rem;
+    }
+}
+
+

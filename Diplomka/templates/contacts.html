@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Контакты{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='about_contacts.css') }}">
+{% endblock %}
+{% block content %}
+<main class="contact-page">
+  <h2>Контактная информация</h2>
+  
+  <p><strong>ООО «ВОЛЖСКСПЕЦМОНТАЖ»</strong></p>
+  <p><strong>Адрес:</strong> Республика Марий Эл, г. Волжск, ул. Лермонтова, д. 1, корп. А, 425000</p>
+  
+  <p><strong>Телефоны:</strong></p>
+  <ul>
+    <li>+7 (83631) 6-46-61</li>
+    <li>+7 (83631) 6-08-95</li>
+  </ul>
+
+  <p><strong>Email:</strong> <a href="mailto:w_s_m@bk.ru">w_s_m@bk.ru</a></p>
+
+  <p><strong>Режим работы:</strong> Пн–Пт с 9:00 до 18:00</p>
+
+  <hr>
+
+  <h3>Руководство и учредители</h3>
+  <p><strong>Директор:</strong> Снегуров Александр Геннадьевич</p>
+  <p><strong>ИНН:</strong> 121604875838</p>
+  <p><strong>С даты назначения:</strong> 23 мая 2008 г.</p>
+
+  <p><strong>Учредители:</strong></p>
+  <ul>
+    <li>Чуприна Виктор Владимирович — с 28 мая 2006 г.</li>
+    <li>Снегуров Александр Геннадьевич — с 2 октября 2020 г.</li>
+  </ul>
+
+  <p><strong>Среднесписочная численность работников:</strong> 31 человек <span style="color: #090;"></span><br>
+  <small>Согласно данным ФНС за 2024 год</small></p>
+</main>
+{% endblock %}

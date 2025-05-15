@@ -1,0 +1,192 @@
+2025-04-26 02:48:19 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-26 02:48:19 INFO: [33mPress CTRL+C to quit[0m
+2025-04-26 02:48:19 INFO:  * Restarting with stat
+2025-04-26 02:48:19 WARNING:  * Debugger is active!
+2025-04-26 02:48:19 INFO:  * Debugger PIN: 125-898-770
+2025-04-26 02:48:46 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-26 02:48:46 INFO: [33mPress CTRL+C to quit[0m
+2025-04-26 02:48:46 INFO:  * Restarting with stat
+2025-04-26 02:48:47 WARNING:  * Debugger is active!
+2025-04-26 02:48:47 INFO:  * Debugger PIN: 125-898-770
+2025-04-26 02:48:56 INFO: 127.0.0.1 - - [26/Apr/2025 02:48:56] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-04-26 02:48:56 INFO: 127.0.0.1 - - [26/Apr/2025 02:48:56] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-04-26 02:48:56 INFO: 127.0.0.1 - - [26/Apr/2025 02:48:56] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-04-26 02:48:56 INFO: 127.0.0.1 - - [26/Apr/2025 02:48:56] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=UJ2Ryy4vjnCyJaYYQANg HTTP/1.1" 200 -
+2025-04-26 02:48:57 INFO: 127.0.0.1 - - [26/Apr/2025 02:48:57] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-04-26 02:49:29 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-26 02:49:29 INFO: [33mPress CTRL+C to quit[0m
+2025-04-26 02:49:29 INFO:  * Restarting with stat
+2025-04-26 02:49:29 WARNING:  * Debugger is active!
+2025-04-26 02:49:29 INFO:  * Debugger PIN: 125-898-770
+2025-04-26 02:51:27 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-26 02:51:27 INFO: [33mPress CTRL+C to quit[0m
+2025-04-26 02:51:36 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-26 02:51:36 INFO: [33mPress CTRL+C to quit[0m
+2025-04-26 02:51:36 INFO:  * Restarting with stat
+2025-04-26 02:51:36 WARNING:  * Debugger is active!
+2025-04-26 02:51:36 INFO:  * Debugger PIN: 125-898-770
+2025-04-26 02:51:48 INFO: 127.0.0.1 - - [26/Apr/2025 02:51:48] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-04-26 02:51:48 INFO: 127.0.0.1 - - [26/Apr/2025 02:51:48] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-04-26 02:51:48 INFO: 127.0.0.1 - - [26/Apr/2025 02:51:48] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-04-26 02:51:48 INFO: 127.0.0.1 - - [26/Apr/2025 02:51:48] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=ctKIotcaJOwynIzri4AH HTTP/1.1" 200 -
+2025-04-26 02:51:48 INFO: 127.0.0.1 - - [26/Apr/2025 02:51:48] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-04-26 02:52:47 INFO:  * Detected change in 'c:\\OSPanel\\domains\\Diplomka\\config.py', reloading
+2025-04-26 02:52:47 INFO:  * Restarting with stat
+2025-04-26 02:52:47 INFO:  * Detected change in 'c:\\OSPanel\\domains\\Diplomka\\config.py', reloading
+2025-04-26 02:52:47 INFO:  * Restarting with stat
+2025-04-26 02:52:47 WARNING:  * Debugger is active!
+2025-04-26 02:52:47 INFO:  * Debugger PIN: 125-898-770
+2025-04-26 02:52:48 WARNING:  * Debugger is active!
+2025-04-26 02:52:48 INFO:  * Debugger PIN: 125-898-770
+2025-04-26 02:52:50 INFO:  * Detected change in 'c:\\OSPanel\\domains\\Diplomka\\config.py', reloading
+2025-04-26 02:52:51 INFO:  * Restarting with stat
+2025-04-26 02:52:51 INFO:  * Detected change in 'c:\\OSPanel\\domains\\Diplomka\\config.py', reloading
+2025-04-26 02:52:51 INFO:  * Restarting with stat
+2025-04-26 02:52:51 WARNING:  * Debugger is active!
+2025-04-26 02:52:51 INFO:  * Debugger PIN: 125-898-770
+2025-04-26 02:52:51 WARNING:  * Debugger is active!
+2025-04-26 02:52:51 INFO:  * Debugger PIN: 125-898-770
+2025-04-26 02:52:52 INFO:  * Detected change in 'c:\\OSPanel\\domains\\Diplomka\\config.py', reloading
+2025-04-26 02:52:52 INFO:  * Restarting with stat
+2025-04-26 02:52:52 INFO:  * Detected change in 'c:\\OSPanel\\domains\\Diplomka\\config.py', reloading
+2025-04-26 02:52:52 INFO:  * Restarting with stat
+2025-04-26 02:52:53 WARNING:  * Debugger is active!
+2025-04-26 02:52:53 INFO:  * Debugger PIN: 125-898-770
+2025-04-26 02:52:53 WARNING:  * Debugger is active!
+2025-04-26 02:52:53 INFO:  * Debugger PIN: 125-898-770
+2025-04-26 02:52:54 INFO:  * Detected change in 'c:\\OSPanel\\domains\\Diplomka\\config.py', reloading
+2025-04-26 02:52:54 INFO:  * Restarting with stat
+2025-04-26 02:52:54 INFO:  * Detected change in 'c:\\OSPanel\\domains\\Diplomka\\config.py', reloading
+2025-04-26 02:52:54 INFO:  * Restarting with stat
+2025-04-26 02:52:55 WARNING:  * Debugger is active!
+2025-04-26 02:52:55 INFO:  * Debugger PIN: 125-898-770
+2025-04-26 02:52:55 WARNING:  * Debugger is active!
+2025-04-26 02:52:55 INFO:  * Debugger PIN: 125-898-770
+2025-04-26 02:52:57 INFO:  * Detected change in 'c:\\OSPanel\\domains\\Diplomka\\config.py', reloading
+2025-04-26 02:52:57 INFO:  * Detected change in 'c:\\OSPanel\\domains\\Diplomka\\config.py', reloading
+2025-04-26 02:52:57 INFO:  * Restarting with stat
+2025-04-26 02:52:57 INFO:  * Restarting with stat
+2025-04-26 02:52:57 WARNING:  * Debugger is active!
+2025-04-26 02:52:57 INFO:  * Debugger PIN: 125-898-770
+2025-04-26 02:52:57 WARNING:  * Debugger is active!
+2025-04-26 02:52:57 INFO:  * Debugger PIN: 125-898-770
+2025-04-26 02:52:59 INFO:  * Detected change in 'c:\\OSPanel\\domains\\Diplomka\\config.py', reloading
+2025-04-26 02:53:00 INFO:  * Detected change in 'c:\\OSPanel\\domains\\Diplomka\\config.py', reloading
+2025-04-26 02:53:00 INFO:  * Restarting with stat
+2025-04-26 02:53:00 INFO:  * Restarting with stat
+2025-04-26 02:53:00 WARNING:  * Debugger is active!
+2025-04-26 02:53:00 INFO:  * Debugger PIN: 125-898-770
+2025-04-26 02:53:00 WARNING:  * Debugger is active!
+2025-04-26 02:53:00 INFO:  * Debugger PIN: 125-898-770
+2025-04-26 02:53:02 INFO:  * Detected change in 'c:\\OSPanel\\domains\\Diplomka\\config.py', reloading
+2025-04-26 02:53:02 INFO:  * Detected change in 'c:\\OSPanel\\domains\\Diplomka\\config.py', reloading
+2025-04-26 02:53:02 INFO:  * Restarting with stat
+2025-04-26 02:53:02 INFO:  * Restarting with stat
+2025-04-26 02:53:03 WARNING:  * Debugger is active!
+2025-04-26 02:53:03 INFO:  * Debugger PIN: 125-898-770
+2025-04-26 02:53:03 WARNING:  * Debugger is active!
+2025-04-26 02:53:03 INFO:  * Debugger PIN: 125-898-770
+2025-04-26 02:53:31 INFO:  * Detected change in 'c:\\OSPanel\\domains\\Diplomka\\app.py', reloading
+2025-04-26 02:53:31 INFO:  * Detected change in 'c:\\OSPanel\\domains\\Diplomka\\app.py', reloading
+2025-04-26 02:53:31 INFO:  * Restarting with stat
+2025-04-26 02:53:31 INFO:  * Restarting with stat
+2025-04-26 02:53:32 WARNING:  * Debugger is active!
+2025-04-26 02:53:32 INFO:  * Debugger PIN: 125-898-770
+2025-04-26 02:53:32 WARNING:  * Debugger is active!
+2025-04-26 02:53:32 INFO:  * Debugger PIN: 125-898-770
+2025-04-26 02:53:35 INFO:  * Detected change in 'c:\\OSPanel\\domains\\Diplomka\\app.py', reloading
+2025-04-26 02:53:35 INFO:  * Detected change in 'c:\\OSPanel\\domains\\Diplomka\\app.py', reloading
+2025-04-26 02:53:35 INFO:  * Restarting with stat
+2025-04-26 02:53:35 INFO:  * Restarting with stat
+2025-04-26 02:53:35 WARNING:  * Debugger is active!
+2025-04-26 02:53:35 INFO:  * Debugger PIN: 125-898-770
+2025-04-26 02:53:35 WARNING:  * Debugger is active!
+2025-04-26 02:53:35 INFO:  * Debugger PIN: 125-898-770
+2025-04-26 02:54:04 INFO:  * Detected change in 'c:\\OSPanel\\domains\\Diplomka\\app.py', reloading
+2025-04-26 02:54:04 INFO:  * Detected change in 'c:\\OSPanel\\domains\\Diplomka\\app.py', reloading
+2025-04-26 02:54:04 INFO:  * Restarting with stat
+2025-04-26 02:54:04 INFO:  * Restarting with stat
+2025-04-26 02:54:04 WARNING:  * Debugger is active!
+2025-04-26 02:54:04 INFO:  * Debugger PIN: 125-898-770
+2025-04-26 02:54:04 WARNING:  * Debugger is active!
+2025-04-26 02:54:04 INFO:  * Debugger PIN: 125-898-770
+2025-04-26 02:54:08 INFO:  * Detected change in 'c:\\OSPanel\\domains\\Diplomka\\app.py', reloading
+2025-04-26 02:54:08 INFO:  * Detected change in 'c:\\OSPanel\\domains\\Diplomka\\app.py', reloading
+2025-04-26 02:54:08 INFO:  * Restarting with stat
+2025-04-26 02:54:08 INFO:  * Restarting with stat
+2025-04-26 02:54:09 WARNING:  * Debugger is active!
+2025-04-26 02:54:09 INFO:  * Debugger PIN: 125-898-770
+2025-04-26 02:54:09 WARNING:  * Debugger is active!
+2025-04-26 02:54:09 INFO:  * Debugger PIN: 125-898-770
+2025-04-26 02:54:22 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-26 02:54:22 INFO: [33mPress CTRL+C to quit[0m
+2025-04-26 02:54:22 INFO:  * Restarting with stat
+2025-04-26 02:54:22 WARNING:  * Debugger is active!
+2025-04-26 02:54:22 INFO:  * Debugger PIN: 125-898-770
+2025-04-26 02:54:30 INFO: 127.0.0.1 - - [26/Apr/2025 02:54:30] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-04-26 02:54:30 INFO: 127.0.0.1 - - [26/Apr/2025 02:54:30] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-04-26 02:54:30 INFO: 127.0.0.1 - - [26/Apr/2025 02:54:30] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-04-26 02:54:30 INFO: 127.0.0.1 - - [26/Apr/2025 02:54:30] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=BYsyRXlrTt9fHPTYf0UA HTTP/1.1" 200 -
+2025-04-26 02:54:30 INFO: 127.0.0.1 - - [26/Apr/2025 02:54:30] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-04-26 02:55:35 INFO:  * Detected change in 'c:\\OSPanel\\domains\\Diplomka\\app.py', reloading
+2025-04-26 02:55:35 INFO:  * Restarting with stat
+2025-04-26 02:55:36 INFO:  * Detected change in 'c:\\OSPanel\\domains\\Diplomka\\app.py', reloading
+2025-04-26 02:55:36 INFO:  * Restarting with stat
+2025-04-26 02:55:36 INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-04-26 02:55:36 INFO: Added job "archive_old_logs" to job store "default"
+2025-04-26 02:55:36 INFO: Scheduler started
+2025-04-26 02:55:36 WARNING:  * Debugger is active!
+2025-04-26 02:55:36 INFO:  * Debugger PIN: 125-898-770
+2025-04-26 02:55:36 INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-04-26 02:55:36 INFO: Added job "archive_old_logs" to job store "default"
+2025-04-26 02:55:36 INFO: Scheduler started
+2025-04-26 02:55:36 WARNING:  * Debugger is active!
+2025-04-26 02:55:36 INFO:  * Debugger PIN: 125-898-770
+2025-04-26 02:55:41 INFO:  * Detected change in 'c:\\OSPanel\\domains\\Diplomka\\app.py', reloading
+2025-04-26 02:55:41 INFO:  * Restarting with stat
+2025-04-26 02:55:42 INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-04-26 02:55:42 INFO: Added job "archive_old_logs" to job store "default"
+2025-04-26 02:55:42 INFO: Scheduler started
+2025-04-26 02:55:42 WARNING:  * Debugger is active!
+2025-04-26 02:55:42 INFO:  * Debugger PIN: 125-898-770
+2025-04-26 02:55:42 INFO:  * Detected change in 'c:\\OSPanel\\domains\\Diplomka\\app.py', reloading
+2025-04-26 02:55:42 INFO:  * Restarting with stat
+2025-04-26 02:55:42 INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-04-26 02:55:42 INFO: Added job "archive_old_logs" to job store "default"
+2025-04-26 02:55:42 INFO: Scheduler started
+2025-04-26 02:55:42 WARNING:  * Debugger is active!
+2025-04-26 02:55:42 INFO:  * Debugger PIN: 125-898-770
+2025-04-26 02:55:43 INFO:  * Detected change in 'c:\\OSPanel\\domains\\Diplomka\\app.py', reloading
+2025-04-26 02:55:44 INFO:  * Restarting with stat
+2025-04-26 02:55:44 INFO:  * Detected change in 'c:\\OSPanel\\domains\\Diplomka\\app.py', reloading
+2025-04-26 02:55:44 INFO:  * Restarting with stat
+2025-04-26 02:55:44 INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-04-26 02:55:44 INFO: Added job "archive_old_logs" to job store "default"
+2025-04-26 02:55:44 INFO: Scheduler started
+2025-04-26 02:55:44 WARNING:  * Debugger is active!
+2025-04-26 02:55:44 INFO:  * Debugger PIN: 125-898-770
+2025-04-26 02:55:44 INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-04-26 02:55:44 INFO: Added job "archive_old_logs" to job store "default"
+2025-04-26 02:55:44 INFO: Scheduler started
+2025-04-26 02:55:44 WARNING:  * Debugger is active!
+2025-04-26 02:55:44 INFO:  * Debugger PIN: 125-898-770
+2025-04-26 02:55:57 INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-04-26 02:55:57 INFO: Added job "archive_old_logs" to job store "default"
+2025-04-26 02:55:57 INFO: Scheduler started
+2025-04-26 02:55:57 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-26 02:55:57 INFO: [33mPress CTRL+C to quit[0m
+2025-04-26 02:55:57 INFO:  * Restarting with stat
+2025-04-26 02:55:57 INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-04-26 02:55:57 INFO: Added job "archive_old_logs" to job store "default"
+2025-04-26 02:55:57 INFO: Scheduler started
+2025-04-26 02:55:57 WARNING:  * Debugger is active!
+2025-04-26 02:55:57 INFO:  * Debugger PIN: 125-898-770
+2025-04-26 02:56:40 INFO:  * Detected change in 'c:\\OSPanel\\domains\\Diplomka\\app.py', reloading
+2025-04-26 02:56:40 INFO:  * Restarting with stat

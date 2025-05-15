@@ -1,0 +1,221 @@
+/* Общий стиль */
+body {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-photo-wrapper {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+}
+
+.profile-photo-label {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ccc;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.profile-photo-label:hover .overlay {
+    opacity: 1;
+}
+
+/* Контейнер */
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    max-width: 500px;
+    width: 90%;
+}
+
+/* Заголовок */
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 26px;
+    color: #333;
+}
+
+/* Метки */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Поля ввода */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+}
+
+/* Для телефонного поля — добавлен placeholder */
+input[type="tel"]::placeholder {
+    color: #888;
+}
+
+input:focus {
+    border-color: #ff9d2f;
+    outline: none;
+}
+
+/* Кнопка */
+button {
+    width: 100%;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: white;
+    padding: 12px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+
+/* Ссылки */
+p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+a {
+    color: #ff7e5f;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Flash-сообщения */
+#flash-messages {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.flash-message {
+    padding: 12px 18px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.3s ease-in;
+}
+
+.flash-message.success {
+    background-color: #28a745;
+}
+
+.flash-message.error,
+.flash-message.danger {
+    background-color: #ff7e5f;
+}
+
+/* Стили для поля ввода номера телефона */
+input[type="tel"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    background-color: #f9f9f9;
+}
+
+/* Стиль для placeholder номера телефона */
+input[type="tel"]::placeholder {
+    color: #888;
+    font-style: italic;
+}
+
+/* Фокус на поле ввода номера */
+input[type="tel"]:focus {
+    border-color: #ff9d2f;
+    outline: none;
+}
+
+/* Применение к номеру телефона, если пустой — указать placeholder */
+input[type="tel"]:invalid {
+    border-color: #dc3545;
+}
+
+/* Успешный формат (при валидации) */
+input[type="tel"]:valid {
+    border-color: #28a745;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Адаптивность */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    button {
+        font-size: 1em;
+    }
+}

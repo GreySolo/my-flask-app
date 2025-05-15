@@ -1,0 +1,138 @@
+/* Общие стили */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #fff;
+  }
+  
+  /* Заголовки */
+  h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    border-bottom: 2px solid #ff7e5f;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.4rem;
+    margin-top: 1.8rem;
+    margin-bottom: 1rem;
+    color: #34495e;
+  }
+  
+  /* Параграфы */
+  p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  /* Списки */
+  ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Секции */
+  .section {
+    background-color: #f9f9f9;
+    padding: 1rem 1.5rem;
+    border-left: 4px solid #feb47b;
+    margin-bottom: 1.5rem;
+    border-radius: 6px;
+  }
+  
+  /* Таблица реквизитов */
+  .requisites-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+  }
+  
+  .requisites-table td {
+    padding: 0.5rem;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .requisites-table td:first-child {
+    font-weight: bold;
+    width: 40%;
+  }
+  
+  /* Цитата компании */
+  .company-quote {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #555;
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    border-top: 1px solid #ccc;
+  }
+  
+  /* Разделитель */
+  .separator {
+    height: 2px;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    margin: 2rem 0;
+    border: none;
+  }
+  
+  /* Контактная страница */
+  .contact-page ul {
+    list-style-type: disc;
+  }
+  
+  .contact-page a {
+    color: #ff7e5f;
+    text-decoration: none;
+  }
+  
+  .contact-page a:hover {
+    text-decoration: underline;
+  }
+  
+  .contact-page hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 2rem 0;
+  }
+  
+/* Адаптивность */
+@media (max-width: 768px) {
+    .page-container {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    .page-container h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact-info,
+    .info-card {
+        font-size: 1rem;
+    }
+
+    .info-section,
+    .about-page {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .info-section {
+        padding: 1rem;
+    }
+
+    .info-card {
+        font-size: 1rem;
+    }
+}  

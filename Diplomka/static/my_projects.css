@@ -1,0 +1,154 @@
+/* Общие стили */
+h2 {
+    text-align: center;
+    color: #000000;
+    margin-top: 20px;
+}
+
+/* Форма фильтрации */
+.filter-form {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.filter-form label,
+.filter-form select {
+    margin: 0 10px;
+    padding: 8px;
+    font-size: 16px;
+}
+
+.filter-form select {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Таблица проектов */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #feb47b;
+    color: white;
+    font-weight: bold;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+/* Статус проекта */
+td {
+    text-transform: capitalize;
+}
+
+td.active {
+    color: #4caf50;
+}
+
+td.completed {
+    color: #2196f3;
+}
+
+td.inactive {
+    color: #f44336;
+}
+
+/* Кнопки */
+a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #ff7e5f;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+a:hover {
+    background-color: #feb47b;
+}
+
+/* Стиль для пустых данных */
+.no-data {
+    text-align: center;
+    font-size: 18px;
+    color: #999;
+}
+
+/* Адаптивные стили */
+
+/* Для устройств с шириной экрана до 768px (планшеты и мобильные устройства) */
+@media screen and (max-width: 768px) {
+    table {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    .filter-form select {
+        width: 100%;
+        padding: 12px;
+    }
+
+    a {
+        width: 100%;
+        padding: 12px;
+        margin-top: 15px;
+    }
+
+    .projects-container {
+        padding: 10px;
+    }
+}
+
+/* Для мобильных устройств с шириной экрана до 480px */
+@media screen and (max-width: 480px) {
+    h2 {
+        font-size: 24px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    .filter-form label,
+    .filter-form select {
+        font-size: 14px;
+    }
+
+    .no-data {
+        font-size: 16px;
+    }
+
+    .projects-container {
+        padding: 5px;
+    }
+
+    .project-card {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+}

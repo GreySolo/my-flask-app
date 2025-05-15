@@ -1,0 +1,53 @@
+
+{% extends "base.html" %}
+
+{% block title %}Главная{% endblock %}
+
+{% block header_title %}
+    <h1 class="company-name">Строительная<br>компания</h1>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="welcome-section">
+    {% if current_user.is_authenticated %}
+        <h2>Здравствуйте, {{ current_user.full_name or current_user.username }}!</h2>
+        <p>
+            Добро пожаловать в корпоративную систему. Здесь вы можете управлять заявками, получать актуальную информацию и просматривать направления деятельности.
+        </p>
+    {% else %}
+        <h2>Добро пожаловать!</h2>
+        <p>Для доступа к функционалу системы необходимо выполнить вход.</p>
+    {% endif %}
+</section>
+
+<section class="activities-section">
+    <h2>Виды деятельности компании</h2>
+    {% if activities %}
+        <div class="activities-container">
+            {% for activity in activities %}
+                <div class="activity-card">
+                    {% if activity.image_url %}
+                        <img src="{{ url_for('static', filename='uploads/' ~ activity.image_url) }}"
+                             alt="{{ activity.title }}" class="activity-image">
+                    {% else %}
+                        <img src="{{ url_for('static', filename='default-image.png') }}"
+                             alt="Изображение не доступно" class="activity-image">
+                    {% endif %}
+                    <div class="activity-details">
+                        <h3>
+                            {{ activity.title }}
+                            {% if activity.is_primary %}
+                                <span class="primary-tag">(Основной вид деятельности)</span>
+                            {% endif %}
+                        </h3>
+                        <p>{{ activity.description }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="no-activities">Информация о деятельности компании временно недоступна.</p>
+    {% endif %}
+</section>
+{% endblock %}

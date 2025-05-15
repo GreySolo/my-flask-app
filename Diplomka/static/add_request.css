@@ -1,0 +1,79 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Градиентный фон */
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 2rem;
+}
+
+h2 {
+    margin-bottom: 1rem;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.form-description {
+    margin-bottom: 1.5rem;
+    color: #f0f0f0;
+}
+
+form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+input[type="text"],
+textarea,
+select {
+    width: 100%;
+    padding: 0.6rem;
+    margin-top: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+button {
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #ff7e5f;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e56750;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 1rem;
+    text-decoration: none;
+    color: #ff7e5f;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.back-button:hover {
+    color: #e56750;
+}

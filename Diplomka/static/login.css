@@ -1,0 +1,155 @@
+/* Основной фон страницы */
+body {
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Мягкий оранжевый градиент */
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s ease;
+}
+
+/* Стили для контейнера с уведомлениями */
+.flash-message-container {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    width: 90%;
+    max-width: 500px;
+}
+
+/* Стили для каждого уведомления */
+.flash-message {
+    background-color: #fff;
+    color: #333;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 1;
+    animation: fadeInOut 5s forwards;
+}
+
+.flash-message.success {
+    background-color: #28a745;
+    color: white;
+}
+
+.flash-message.error {
+    background-color: #dc3545;
+    color: white;
+}
+
+.flash-message i {
+    margin-right: 10px;
+}
+
+/* Анимация для исчезновения уведомлений */
+@keyframes fadeInOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    80% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+}
+
+/* Основная форма логина */
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Заголовок страницы */
+h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+/* Поля ввода */
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1.1em;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #ff9d2f; /* Оранжевая рамка при фокусе */
+    outline: none;
+}
+
+/* Кнопка отправки */
+button {
+    background: linear-gradient(to right, #ff9d2f, #ff6126); /* Оранжевый градиент на кнопке */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    width: 100%;
+    transition: background 0.3s ease;
+}
+
+/* Эффект наведения на кнопку */
+button:hover {
+    background: linear-gradient(to right, #ff9d2f, #ff6a00); /* Ярко-оранжевый фон при наведении */
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Ссылка "Забыли пароль?" */
+p a {
+    color: #ff9d2f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Мобильная адаптивность */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 30px;
+    }
+
+    button {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+
+    button {
+        font-size: 1em;
+    }
+}

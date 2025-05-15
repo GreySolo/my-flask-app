@@ -1,0 +1,140 @@
+h2 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Стили для формы редактирования проекта */
+form {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Стиль для всех элементов формы */
+form label {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+form input, form textarea, form select {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+form img {
+    max-width: 200px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Стиль для кнопки сохранения */
+form button {
+    padding: 12px 20px;
+    background-color: #ff7e5f;
+    color: white;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+form button:hover {
+    background-color: #feb47b; /* Плавное изменение цвета кнопки */
+}
+
+/* Стиль для кнопки "Назад" */
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff7e5f;
+    color: white;
+    font-size: 1.1em;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #feb47b; /* Плавное изменение цвета кнопки при наведении */
+}
+
+/* Стиль для блока с двумя списками (двусторонний список для сотрудников) */
+.dual-select {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.dual-select > div {
+    width: 48%;
+}
+
+.dual-select label {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.dual-select select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 150px;
+    box-sizing: border-box;
+}
+
+.dual-select select option {
+    padding: 5px;
+}
+
+/* Стиль для поля выбора статуса */
+form select[name="status"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+/* Мобильная адаптивность */
+@media screen and (max-width: 768px) {
+    h2 {
+        font-size: 2em;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    form button {
+        font-size: 1em;
+    }
+
+    .dual-select {
+        flex-direction: column;
+    }
+
+    .dual-select > div {
+        width: 100%;
+    }
+}

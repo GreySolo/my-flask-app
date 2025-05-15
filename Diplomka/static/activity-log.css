@@ -1,0 +1,158 @@
+.activity-log-container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.log-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.log-header h2 {
+    font-size: 2rem;
+    margin-bottom: 0;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.back-button {
+    padding: 0.5rem 1rem;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.back-button:hover {
+    background: #feb47b;
+}
+
+.log-description {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.log-filters {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+}
+
+.filters-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+.filters-form label {
+    font-weight: 500;
+}
+
+.filters-form select,
+.filters-form input[type="text"],
+.filters-form input[type="date"] {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    min-width: 180px;
+}
+
+.filter-button {
+    padding: 0.5rem 1rem;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.filter-button:hover {
+    background: linear-gradient(to right, #feb47b, #ff7e5f);
+}
+
+.log-table-section {
+    overflow-x: auto;
+}
+
+.log-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.log-table th,
+.log-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.log-table th {
+    background: #f4f4f4;
+    color: #333;
+    font-weight: 600;
+}
+
+.log-table tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+.no-data-message {
+    text-align: center;
+    color: #888;
+    margin-top: 2rem;
+    font-size: 1rem;
+}
+
+.pagination-section {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.pagination {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.pagination-link {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.pagination-link:hover {
+    background: linear-gradient(to right, #feb47b, #ff7e5f);
+}
+
+.current-page {
+    font-weight: bold;
+    color: #444;
+}
+
+/* Убираем стили подсказок */
+.log-table td[title] {
+    cursor: default;
+}

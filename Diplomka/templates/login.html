@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Вход в систему</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+
+<!-- Флеш-сообщения -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <div class="flash-message-container">
+      {% for category, message in messages %}
+        <div class="flash-message {{ category }}">
+          {% if category == 'success' %}
+            <i class="fas fa-check-circle"></i>
+          {% elif category in ['error', 'danger'] %}
+            <i class="fas fa-times-circle"></i>
+          {% endif %}
+          {{ message }}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+<!-- Основной контент -->
+<main class="main-content">
+  <div class="container">
+      <h1>Войти в систему</h1>
+
+      <form method="POST" action="{{ url_for('login') }}">
+        <label for="phone_number">Номер телефона:</label>
+        <input type="text" id="phone_number" name="phone_number" required>
+        
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password" required>
+        
+        <button type="submit">Войти</button>
+    </form>
+  </div>
+</main>
+<script src="{{ url_for('static', filename='validate.js') }}"></script>
+<script>
+    // Уведомления исчезают через 3 секунды
+    setTimeout(function() {
+        const flashMessages = document.querySelectorAll('.flash-message');
+        flashMessages.forEach(message => {
+            message.style.opacity = 0;
+            setTimeout(() => message.remove(), 300);
+        });
+    }, 3000);
+</script>
+
+</body>
+</html>

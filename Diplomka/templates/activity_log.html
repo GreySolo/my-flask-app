@@ -1,0 +1,99 @@
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='activity-log.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="activity-log-container">
+        <header class="log-header">
+            <h2>Журнал действий</h2>
+            <p class="log-description">Здесь отображаются все действия, выполненные пользователями в системе.</p>
+        </header>
+
+        <!-- Фильтры для поиска -->
+        <section class="log-filters">
+            <form method="GET" action="{{ url_for('activity_log') }}" class="filters-form">
+                <label for="filter-value">Выберите пользователя:</label>
+                <select id="filter-value" name="filter_value">
+                    <option value="">Выберите пользователя</option>
+                    {% for user in users %}
+                        <option value="{{ user.id }}" {% if request.args.get('filter_value') == user.id|string %}selected{% endif %}>
+                            {% if user.first_name and user.last_name %}
+                                {{ user.last_name }} {{ user.first_name }} {{ user.middle_name }} (ID: {{ user.id }})
+                            {% else %}
+                                {{ user.username }} (ID: {{ user.id }})
+                            {% endif %}
+                        </option>
+                    {% endfor %}
+                </select>
+        
+                <label for="date-filter-from">Дата с:</label>
+                <input type="date" id="date-filter-from" name="date_filter_from" value="{{ request.args.get('date_filter_from') }}">
+        
+                <label for="date-filter-to">Дата по:</label>
+                <input type="date" id="date-filter-to" name="date_filter_to" value="{{ request.args.get('date_filter_to') }}">
+        
+                <button type="submit" class="filter-button">Применить фильтр</button>
+            </form>
+        </section>        
+
+        <!-- Таблица логов -->
+        <section class="log-table-section">
+            {% if logs.items %}
+                <table class="log-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Пользователь</th>
+                            <th>Действие</th>
+                            <th>Описание</th>
+                            <th>Время</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for log in logs.items %}
+                            <tr>
+                                <td>{{ log.id }}</td>
+                                <td class="{% if log.user.role == 'admin' %}admin-user{% endif %}"
+                                    title="ID: {{ log.user.id }}, Роль: {{ log.user.role }}">
+                                    {% if log.user.first_name and log.user.last_name %}
+                                        {{ log.user.last_name }} {{ log.user.first_name }} {{ log.user.middle_name }}
+                                    {% else %}
+                                        {{ log.user.username }} (ID: {{ log.user.id }})
+                                    {% endif %}
+                                </td>
+                                <td>{{ log.action }}</td>
+                                <td title="{{ log.details }}">
+                                    {{ log.details|truncate(50, True, '...') }} 
+                                </td>
+                                <td>{{ log.timestamp.strftime('%d.%m.%Y %H:%M') }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p class="no-data-message">Нет записей в журнале действий.</p>
+            {% endif %}
+        </section>
+
+        <!-- Пагинация -->
+        {% if logs.has_prev or logs.has_next %}
+            <section class="pagination-section">
+                <nav class="pagination">
+                    {% if logs.has_prev %}
+                        <a href="{{ url_for('activity_log', page=logs.prev_num, filter_value=request.args.get('filter_value'), date_filter=request.args.get('date_filter')) }}" class="pagination-link">← Предыдущая</a>
+                    {% endif %}
+                    <span class="current-page">{{ logs.page }}</span>
+                    {% if logs.has_next %}
+                        <a href="{{ url_for('activity_log', page=logs.next_num, filter_value=request.args.get('filter_value'), date_filter=request.args.get('date_filter')) }}" class="pagination-link">Следующая →</a>
+                    {% endif %}
+                </nav>
+            </section>
+        {% endif %}
+    </div>
+{% endblock %}
+
+<!-- Кнопка назад -->
+<section class="back-button-section">
+    <a href="{{ url_for('admin') }}" class="back-button">← Назад</a>
+</section>

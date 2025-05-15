@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  {% extends 'base.html' %}
+
+{% block title %}Профиль сотрудника{% endblock %}
+
+{% block content %}
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='profile.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<!-- Уведомления -->
+<div id="flash-messages">
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="flash-message {{ category }}">
+          {% if category == 'success' %}
+            <i class="fas fa-check-circle"></i>
+          {% elif category in ['error', 'danger'] %}
+            <i class="fas fa-times-circle"></i>
+          {% endif %}
+          {{ message }}
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+</div>
+
+
+<div class="container">
+  <h2>Профиль сотрудника: {{ current_user.last_name or '' }} {{ current_user.first_name or '' }}{% if current_user.middle_name %} {{ current_user.middle_name }}{% endif %}</h2>
+
+  <div class="profile-info">
+    <input type="file" id="image-upload" accept="image/*" style="display: none;">
+    <img id="profile-image"
+         src="{{ url_for('static', filename='uploads/' + (current_user.image_url if current_user.image_url else 'default.jpg')) }}"
+         alt="Фото профиля" class="profile-image" title="Нажмите, чтобы изменить фото">
+
+         <ul class="profile-details">
+          <li><strong>Фамилия:</strong> <span>{{ current_user.last_name or '' }}</span></li>
+          <li><strong>Имя:</strong> <span>{{ current_user.first_name or '' }}</span></li>
+          <li><strong>Отчество:</strong> <span>{{ current_user.middle_name or '' }}</span></li>
+          <li><strong>Email:</strong> <span>{{ current_user.email or '' }}</span></li>
+          <li><strong>Номер:</strong> <span>{{ current_user.phone_number or '' }}</span></li>
+          <li><strong>Дата регистрации:</strong> <span>{{ current_user.registration_date.strftime('%d.%m.%Y') }}</span></li>
+          <li><strong>Роль:</strong> <span>{{ current_user.role.title() }}</span></li>
+        </ul>        
+
+    <div class="profile-actions">
+      <a href="{{ url_for('edit_profile') }}" class="btn edit-link"><i class="fas fa-user-edit"></i> Редактировать профиль</a>
+      <a href="{{ url_for('logout') }}" class="btn logout-link"><i class="fas fa-sign-out-alt"></i> Выйти</a>
+    </div>
+  </div>
+
+  <nav class="staff-nav">
+    {% if current_user.role == 'admin' %}
+      <a href="{{ url_for('admin') }}"><i class="fas fa-tools"></i> Админ-панель</a>
+    {% endif %}
+    <a href="{{ url_for('my_projects') }}"><i class="fas fa-folder-open"></i> Мои проекты</a>
+    <a href="{{ url_for('view_requests') }}"><i class="fas fa-file-alt"></i> Мои заявки</a>
+    <a href="{{ url_for('notifications') }}">
+      <i class="fas fa-bell"></i> Уведомления
+      {% if unread_notifications > 0 %}
+        <span class="notification-count">{{ unread_notifications }}</span>
+      {% endif %}
+    </a>
+  </nav>
+</div>
+
+<script>
+  setTimeout(() => {
+    document.querySelectorAll('.flash-message').forEach(el => {
+      el.style.opacity = '0';
+      setTimeout(() => el.remove(), 300);
+    });
+  }, 3000);
+
+  const img = document.getElementById('profile-image');
+  const input = document.getElementById('image-upload');
+
+  img?.addEventListener('click', () => input.click());
+
+  input?.addEventListener('change', () => {
+    const file = input.files[0];
+    if (!file) return;
+
+    const formData = new FormData();
+    formData.append('profile_image', file);
+
+    fetch('{{ url_for("upload_profile_image_ajax") }}', {
+      method: 'POST',
+      body: formData
+    })
+    .then(resp => resp.json())
+    .then(data => {
+      if (data.success && data.image_url) {
+        img.src = data.image_url + '?_=' + new Date().getTime();
+      } else {
+        alert(data.error || 'Ошибка при загрузке изображения');
+      }
+    })
+    .catch(() => alert('Ошибка соединения с сервером'));
+  });
+</script>
+{% endblock %}

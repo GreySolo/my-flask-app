@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить проект</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='add_project.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Добавление проекта</h2>
+
+        <form method="POST" action="{{ url_for('add_project') }}" enctype="multipart/form-data">
+            <label for="title">Название проекта:</label>
+            <input type="text" name="title" id="title" required><br>
+
+            <label for="description">Описание:</label>
+            <textarea name="description" id="description" required></textarea><br>
+
+            <label for="image">Изображение:</label>
+            <input type="file" name="image" id="image" accept="image/*" required><br>
+
+            <label>Назначенные сотрудники:</label>
+            <div class="dual-select">
+                <div>
+                    <label>Доступные:</label><br>
+                    <select id="availableUsers" multiple ondblclick="moveToSelected('availableUsers', 'assignedUsers')">
+                        {% for user in users %}
+                            <option value="{{ user.id }}">
+                                {{ user.last_name }} {{ user.first_name }}{% if user.middle_name %} {{ user.middle_name }}{% endif %}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+            
+                <div>
+                    <label>Выбранные:</label><br>
+                    <select id="assignedUsers" name="users" multiple ondblclick="moveToSelected('assignedUsers', 'availableUsers')" required></select>
+                </div>
+            </div>
+            
+            <script>
+                // Функция для перемещения элементов между списками при двойном клике
+                function moveToSelected(fromId, toId) {
+                    const from = document.getElementById(fromId);
+                    const to = document.getElementById(toId);
+            
+                    // Перемещаем выбранные элементы из одного списка в другой
+                    [...from.selectedOptions].forEach(option => {
+                        to.add(option);  // Добавляем выбранные элементы в другой список
+                    });
+                }
+            </script>            
+
+            <div class="form-buttons">
+                <button type="submit">Добавить</button>
+                <a href="{{ url_for('admin') }}" class="back-button">Назад</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

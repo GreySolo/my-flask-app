@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Уведомления</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Уведомления</h1>
+        <nav>
+            <a href="{{ url_for('profile') }}">Профиль</a>
+            <a href="{{ url_for('logout') }}">Выйти</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Мои уведомления</h2>
+        <ul>
+            {% for notification in notifications %}
+                <li class="{% if not notification.is_read %}unread{% endif %}">
+                    <p>{{ notification.message }}</p>
+                    <small>{{ notification.created_at.strftime('%d.%m.%Y %H:%M') }}</small>
+                </li>
+            {% endfor %}
+        </ul>
+    </main>
+</body>
+</html>

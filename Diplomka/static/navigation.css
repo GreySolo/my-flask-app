@@ -1,0 +1,24 @@
+/* Навигационное меню */
+.main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.nav-button {
+    background-color: #fff;
+    color: #ff7e5f;
+    padding: 0.6rem 1.2rem;
+    text-decoration: none;
+    border: 2px solid #ff7e5f;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #ff7e5f;
+    color: white;
+}

@@ -1,0 +1,185 @@
+/* Общий фон и шрифт */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Контейнер для основного контента */
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Заголовок */
+h2 {
+    font-size: 2.5em;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Кнопка "Добавить заявку" */
+.add-request-button {
+    background-color: #ff7e5f;
+    color: white;
+    font-size: 1.1em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.add-request-button:hover {
+    background-color: #feb47b;
+    transform: translateY(-2px);
+}
+
+/* Таблица */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background-color: #ff7e5f;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.95em;
+    letter-spacing: 0.5px;
+}
+
+tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Кнопки действий */
+.action-button {
+    background-color: #ff7e5f;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    margin-right: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.action-button:hover {
+    background-color: #feb47b;
+    transform: translateY(-1px);
+}
+
+/* Кнопка удаления */
+.delete-button {
+    background-color: #e53935;
+}
+
+.delete-button:hover {
+    background-color: #ff6f61;
+}
+
+/* Сообщение при отсутствии заявок */
+p {
+    text-align: center;
+    font-size: 1.2em;
+    color: #777;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fafafa;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+}
+
+/* Кнопка "Назад" */
+.back-button {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #ff7e5f;
+    color: rgb(229, 226, 226);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.back-button:hover {
+    background-color: #feb47b;
+}
+
+/* Адаптивность */
+@media screen and (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 10px;
+        background-color: #fff;
+    }
+
+    td {
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td::before {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+        color: #555;
+    }
+
+    td:nth-of-type(1)::before { content: "ID"; }
+    td:nth-of-type(2)::before { content: "Заголовок"; }
+    td:nth-of-type(3)::before { content: "Описание"; }
+    td:nth-of-type(4)::before { content: "Статус"; }
+    td:nth-of-type(5)::before { content: "Действия"; }
+
+    .add-request-button {
+        width: 100%;
+        text-align: center;
+    }
+}

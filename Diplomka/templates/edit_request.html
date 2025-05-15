@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Редактировать заявку</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='edit_request.css') }}">
+</head>
+<body>
+  <div class="admin-container">
+    <h2>Редактировать заявку</h2>
+    <form method="POST" class="edit-form">
+      <label for="title">Заголовок</label>
+      <input type="text" id="title" name="title" value="{{ request_data.title }}" required>
+
+      <label for="description">Описание</label>
+      <textarea id="description" name="description" required>{{ request_data.description }}</textarea>
+
+      {% if current_user.role == 'admin' %}
+        <label for="status">Статус</label>
+        <select id="status" name="status" required>
+          <option value="Новая" {% if request_data.status == 'Новая' %}selected{% endif %}>Новая</option>
+          <option value="В обработке" {% if request_data.status == 'В обработке' %}selected{% endif %}>В обработке</option>
+          <option value="Одобрена" {% if request_data.status == 'Одобрена' %}selected{% endif %}>Одобрена</option>
+          <option value="Отклонена" {% if request_data.status == 'Отклонена' %}selected{% endif %}>Отклонена</option>
+          <option value="Завершена" {% if request_data.status == 'Завершена' %}selected{% endif %}>Завершена</option>
+        </select>
+      {% endif %}
+
+      <button type="submit" class="submit-button">Обновить</button>
+      <div style="margin-top: 1rem;">
+        <a href="javascript:history.back()" class="back-button">← Назад</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

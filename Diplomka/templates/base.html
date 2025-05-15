@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Внутренний портал{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Базовые стили -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    
+    <!-- Стили для навигации -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='navigation.css') }}">
+
+    <!-- Дополнительные стили из дочерних шаблонов -->
+    {% block extra_css %}{% endblock %}
+</head>
+<body class="base-page">
+    <!-- Шапка -->
+    <header class="site-header">
+        {% block header_title %}{% endblock %}
+
+        <nav class="main-nav">
+            <a href="{{ url_for('index') }}" class="nav-button">Главная</a>
+            {% if current_user.is_authenticated %}
+                {% if current_user.role == 'admin' %}
+                    <a href="{{ url_for('admin') }}" class="nav-button">Админ-панель</a>
+                {% endif %}
+                <a href="{{ url_for('profile') }}" class="nav-button">Профиль</a>
+                <a href="{{ url_for('view_projects') }}" class="nav-button">Проекты</a>
+            {% else %}
+                <a href="{{ url_for('about') }}" class="nav-button">О нас</a>
+                <a href="{{ url_for('contacts') }}" class="nav-button"> Контакты</a>
+                <a href="{{ url_for('login') }}" class="nav-button">Войти</a>
+            {% endif %}
+        </nav>
+    </header>
+
+    <!-- Контент страницы -->
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Скрипты (по желанию) -->
+    {% block scripts %}{% endblock %}
+</body>
+</html>

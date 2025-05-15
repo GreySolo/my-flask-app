@@ -1,0 +1,302 @@
+/* Общие стили для всех страниц */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    transition: background-color 0.3s ease;
+}
+
+/* Шапка */
+.site-header {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.company-name {
+    font-size: 3rem;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* Флеш-сообщения */
+#flash-messages {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.flash-message {
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.flash-message i {
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+.flash-message.success {
+    background-color: #D4EDDA;
+    color: #155724;
+}
+
+.flash-message.error,
+.flash-message.danger {
+    background-color: #F8D7DA;
+    color: #721C24;
+}
+
+/* Профиль пользователя */
+.profile-info {
+    width: 100%;
+    max-width: 800px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    transition: box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.profile-info:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Фотография пользователя */
+.profile-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    border: 3px solid #FF7E5F;
+    transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.1);
+}
+
+/* Детали профиля */
+.profile-details {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 10px 20px; /* вертикальный и горизонтальный отступ */
+    font-size: 1.1rem;
+    color: #333;
+    text-align: left;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 25px;
+}
+
+.profile-details li {
+    list-style: none;
+    display: contents; /* позволяет li не ломать сетку */
+}
+
+.profile-details strong {
+    font-weight: bold;
+}
+
+/* Значение (например, "Богданов") */
+.profile-details li span {
+    flex-grow: 1; /* Значение займёт оставшееся пространство */
+    text-align: left; /* Выравнивание значения по левому краю */
+    color: #555;
+}
+
+/* Форма входа и редактирования */
+form {
+    width: 100%;
+    max-width: 500px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    transition: box-shadow 0.3s ease;
+}
+
+form:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+form h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="password"]:focus,
+form input[type="email"]:focus,
+form input[type="file"]:focus {
+    border: 1px solid #FF7E5F;
+    outline: none;
+}
+
+form button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #FF7E5F;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #FF5A3C;
+}
+
+/* Кнопка назад */
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #FF7E5F;
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #FF5A3C;
+}
+
+/* Навигация сотрудника */
+.staff-nav {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.staff-nav a {
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 10px 15px;
+    color: #FF7E5F;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease;
+}
+
+.staff-nav a:hover {
+    background-color: #ffe5db;
+}
+
+/* Уведомления */
+.notification-count {
+    background-color: red;
+    color: white;
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    border-radius: 50%;
+    position: relative;
+    top: -10px;
+    left: -10px;
+}
+
+/* Кнопки "Редактировать профиль" и "Выйти" */
+.edit-link,
+.logout-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FF7E5F;
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.edit-link:hover,
+.logout-link:hover {
+    background-color: #FF5A3C;
+}
+
+/* Мобильные стили */
+@media (max-width: 768px) {
+    .profile-info,
+    form {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .company-name {
+        font-size: 2rem;
+    }
+
+    .staff-nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .staff-nav a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .profile-info h2 {
+        font-size: 1.6rem;
+    }
+
+    .profile-details {
+        font-size: 1rem;
+    }
+}
